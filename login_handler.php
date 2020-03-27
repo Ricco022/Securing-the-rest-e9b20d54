@@ -66,7 +66,7 @@
     case 0:
             setcookie("error", "Verkeerde username", time() + 36, "/");
             redirect("login.php");
-            break;
+        break;
     case 1:
             var_dump('er is een gebruiker');
         if ($_POST['password'] === $result[0]['wachtwoord']) {
@@ -76,11 +76,11 @@
                 setcookie("error", "Gerard de kat heeft ver gezocht, maar kon dit wachtwoord nergens vinden!", time() + 36, "/");
                 redirect("login.php");
         }
-            break;
+        break;
     default:
             setcookie("error", "Oops! Er is een onbekende fout opgetreden", time() + 36, "/");
             redirect("login.php");
-            break;
+        break;
     }
     ?>
 
