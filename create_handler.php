@@ -1,5 +1,5 @@
 <?php
-include 'login_check.php';
+require 'login_check.php';
 function redirect($url) {
     ob_start();
     header('Location: '.$url);
@@ -25,7 +25,7 @@ try {
     throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-if (isset($_POST['serie'])){
+if (isset($_POST['serie'])) {
     $serie = 1;
 } else {
     $serie = 0;
@@ -48,4 +48,3 @@ $query = <<<EOT
 $result = $pdo->query($query)->fetch();
 
 redirect("index.php");
-?>

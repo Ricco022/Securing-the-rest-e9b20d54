@@ -8,7 +8,7 @@
 
 <body>
     <?php
-    include 'login_check.php';
+    require 'login_check.php';
     function select($quary)
     {
         $host = 'localhost';

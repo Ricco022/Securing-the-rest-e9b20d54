@@ -1,14 +1,13 @@
 <?php
-    function redirect($url) {
+function redirect($url) {
         ob_start();
         header('Location: '.$url);
         ob_end_flush();
         die();
-    }
-    if (!isset($_COOKIE['loggedInUser'])){
+}
+if (!isset($_COOKIE['loggedInUser'])) {
         redirect("login.php");
         setcookie("error", "U bent niet ingelogd", time() + 36, "/");
-    } else {
+} else {
         echo '<form action="logout.php" method="post"><input type="submit" value="log uit"></form>';
-    }
-?>
+}

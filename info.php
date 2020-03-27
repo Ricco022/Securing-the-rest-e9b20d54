@@ -9,7 +9,7 @@
 <body>
     <a href="index.php">Terug</a>
     <?php
-    include 'login_check.php';
+    require 'login_check.php';
     $host = 'localhost';
     $db   = 'netland';
     $user = 'root';

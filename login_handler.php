@@ -63,21 +63,21 @@
     var_dump($result);
 
     switch (count($result)) {
-        case 0:
+    case 0:
             setcookie("error", "Verkeerde username", time() + 36, "/");
             redirect("login.php");
             break;
-        case 1:
+    case 1:
             var_dump('er is een gebruiker');
-            if ($_POST['password'] === $result[0]['wachtwoord']) {
+        if ($_POST['password'] === $result[0]['wachtwoord']) {
                 setcookie("loggedInUser", $result[0]['id'], time() + 3600, "/");
                 redirect("index.php");
-            } else {
+        } else {
                 setcookie("error", "Gerard de kat heeft ver gezocht, maar kon dit wachtwoord nergens vinden!", time() + 36, "/");
                 redirect("login.php");
-            }
+        }
             break;
-        default:
+    default:
             setcookie("error", "Oops! Er is een onbekende fout opgetreden", time() + 36, "/");
             redirect("login.php");
             break;
